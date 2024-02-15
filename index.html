@@ -5,26 +5,37 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Advanced SVG Background Website</title>
 <style>
-    body {
+    /* Resetting default styles */
+    * {
         margin: 0;
         padding: 0;
+        box-sizing: border-box;
+    }
+
+    /* Body styles */
+    body {
+        font-family: 'Arial', sans-serif;
         background-image: url('test.svg');
         background-size: cover;
         background-repeat: no-repeat;
-        height: 100vh;
+        min-height: 100vh;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         text-align: center;
+        overflow-x: hidden;
+        position: relative;
     }
+
+    /* Navigation styles */
     nav {
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
         background-color: rgba(0, 0, 0, 0.5);
-        padding: 10px 0;
+        padding: 20px 0;
         z-index: 1000;
     }
     nav ul {
@@ -34,20 +45,45 @@
     }
     nav ul li {
         display: inline;
-        margin: 0 10px;
+        margin: 0 15px;
     }
     nav ul li a {
         color: white;
         text-decoration: none;
+        font-size: 18px;
+        transition: color 0.3s ease;
     }
+    nav ul li a:hover {
+        color: #ff6f61;
+    }
+
+    /* Content styles */
     .content {
-        margin-top: 80px; /* Adjust according to the height of your navigation bar */
+        margin-top: 100px; /* Adjust according to the height of your navigation bar */
         color: white;
-        font-family: Arial, sans-serif;
     }
+
+    /* Heading styles */
+    h1 {
+        font-size: 48px;
+        margin-bottom: 20px;
+        letter-spacing: 1px;
+    }
+
+    /* Paragraph styles */
+    p {
+        font-size: 18px;
+        line-height: 1.6;
+        margin-bottom: 40px;
+    }
+
+    /* Media query for smaller screens */
     @media (max-width: 768px) {
         .content {
-            margin-top: 40px;
+            margin-top: 60px;
+        }
+        h1 {
+            font-size: 36px;
         }
     }
 </style>
